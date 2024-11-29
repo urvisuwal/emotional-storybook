@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storybook A and Questions</title>
+    <script src="jspsych/dist/jspsych.js"></script>
+    <script src="jspsych/dist/plugin-html-keyboard-response.js"></script>
+    <script src="jspsych/dist/plugin-html-button-response.js"></script>
+    <script src="jspsych/dist/plugin-survey-text.js"></script>
+    <script src="jspsych/dist/plugin-fullscreen.js"></script>
+    <script src="jspsych/dist/plugin-instructions.js"></script>
+    <link rel="stylesheet" href="jspsych/dist/jspsych.css">
+
+  </head>
+  <body></body>
+  <script>
+
+    /* initialize jsPsych */
+    var jsPsych = initJsPsych({
+    });
+
+    /* create timeline */
+    var timeline = [];
+
+    var enter_fullscreen = {
+        type: jsPsychFullscreen,
+        fullscreen_mode: true
+    };
+    timeline.push(enter_fullscreen);
+    
+
+    /* define welcome block  */
+    var instructions = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: '<font size = "+3"> Instructions TBD <p>Press any key to continue</p> </font>'
+    };
+    timeline.push(instructions);
+    
+    /* asking user for partiicpant ID */
+    var participantID = {
+      type: jsPsychSurveyText,
+      questions: [
+        {prompt: 'Participant ID', name: 'ParticipantID'}
+      ]
+    };
+    timeline.push(participantID);
+
+    /* asking user to enter question set */
+    var questionset = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<p>Question Set</p>",
+        choices: ['1', '2', '3'],
+    };
+    timeline.push(questionset);
+
+    /* define instructions */
+    var instructions = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: "<font size = '+3'> Navigate through the storybook <p>Press any key to continue</p></font>",
+    };
+    timeline.push(instructions);
+
+    // STORYBOOK
+
+    /* define storybook set A */
+    var storybookA = {
+      type: jsPsychInstructions,
+      pages: [
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p1.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p2.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p3.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p4.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p5.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p6.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p7.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p8.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p9.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p10.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p11.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p12.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p13.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p14.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p15.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p16.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p17.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p18.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p19.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p20.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p21.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p22.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p23.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p24.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p25.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p26.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p27.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p28.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p29.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p30.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p31.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p32.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p33.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p34.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p35.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p36.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p37.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p38.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p39.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p40.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p41.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p42.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p43.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p44.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p45.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p46.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p47.mp4">.</video>',
+        '<video height="650" autoplay="true" preload="none" ><source src="storybookA/p48.mp4">.</video>'
+      ],
+      show_clickable_nav: true
+
+    };
+    
+    timeline.push(storybookA)
+    
+    /************************************************************************************************************************/
+    /************************************************************************************************************************/
+
+    // QUESTION SETS 
+
+    var path = '<img width="500" height="389" src="storybookA/'
+
+    /* define instructions */
+    var practice_instructions = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: "<font size = '+3'>Now, let's try a practice question! Click the box that includes the correct response <p>Press any key to continue</p></font>",
+    };
+    timeline.push(practice_instructions);
+    
+    var question_practice = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: '<p><font size = "+3">What season is it when it snows the most?</p></font>',
+        choices: [path+'A_PA.png">', path+'A_PB.png">', path+'A_PC.png">', path+'A_PD.png">'],
+    };
+    timeline.push(question_practice);
+    
+
+    /* define question instruction */
+    var main_instructions = {
+      type: jsPsychHtmlKeyboardResponse,
+      stimulus: "<font size = '+3'> Great job! Now we are going to ask you some questions about the story you read. <p>If you can't remember, give it your best guess.</p> <p>Press any key to continue</p></font>",
+    };
+    timeline.push(main_instructions);
+
+
+    // set 1 questions
+
+    var q1_set1 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>Why didn't Sam have cereal for breakfast?</font>",
+        choices: [path+'A1_1A.png">', path+'A1_1B.png">', path+'A1_1C.png">', path+'A1_1D.png">']
+    };
+
+    var q2_set1 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What did Sam do right after the doctor’s kit broke?</font>",
+        choices: [path+'A1_2A.png">', path+'A1_2B.png">', path+'A1_2C.png">', path+'A1_2D.png">']
+    };
+
+    var q3_set1 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What did Sam use to build a fort?</font>",
+        choices: [path+'A1_3A.png">', path+'A1_3B.png">', path+'A1_3C.png">', path+'A1_3D.png">'],
+    };
+
+    var q4_set1 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>Why couldn’t Sam color the castle green?</font>",
+        choices: [ path+'A1_4A.png">', path+'A1_4B.png">', path+'A1_4C.png">', path+'A1_4D.png">'],
+    };
+
+    var q5_set1 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What did Sam have for lunch?</font>",
+        choices: [path+'A1_5A.png">', path+'A1_5B.png">', path+'A1_5C.png">', path+'A1_5D.png">']
+    };
+
+    var q6_set1 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What did Sam feed the cat?</font>",
+        choices:[path+'A1_6A.png">', path+'A1_6B.png">', path+'A1_6C.png">', path+'A1_6D.png">']
+    };
+
+    var q7_set1 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What did Sam’s mother tell Sam to do after she read the story?</font>",
+        choices: [path+'A1_7A.png">', path+'A1_7B.png">', path+'A1_7C.png">', path+'A1_7D.png">']
+    };
+
+    var q8_set1 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>How did Sam get home from school?</font>",
+        choices: [ path+'A1_8A.png">', path+'A1_8B.png">', path+'A1_8C.png">', path+'A1_8D.png">']
+    };
+    
+
+    var s1 = [q1_set1, q2_set1, q3_set1, q4_set1, q5_set1, q6_set1, q7_set1, q8_set1]
+    var set1_questions_randomized = jsPsych.randomization.shuffleNoRepeats(s1);
+   
+    var set1_node = {
+      timeline: set1_questions_randomized,
+      conditional_function: function(){
+          // get the data from the question set trial,
+          // and check which key was pressed
+          var data = jsPsych.data.get().first(4).last(1).values()[0]['response'];
+          if(data == 0 ){
+              return true;
+          } else {
+              return false;
+          }
+      }
+    }; timeline.push(set1_node);
+
+    // set 2 questions 
+
+    var q1_set2 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>Why couldn't Sam play outside after school?</font>",
+        choices: [path+'A2_1A.png">', path+'A2_1B.png">', path+'A2_1C.png">', path+'A2_1D.png">']
+    };
+
+    var q2_set2 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>How did Sam get to school?</font>",
+        choices: [path+'A2_2A.png">', path+'A2_2B.png">', path+'A2_2C.png">', path+'A2_2D.png">']
+    };
+
+    var q3_set2 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What kept Sam awake when trying to fall asleep?</font>",
+        choices: [path+'A2_3A.png">', path+'A2_3B.png">', path+'A2_3C.png">', path+'A2_3D.png">'],
+    };
+
+    var q4_set2 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What color is Sam's cat?</font>",
+        choices: [ path+'A2_4A.png">', path+'A2_4B.png">', path+'A2_4C.png">', path+'A2_4D.png">'],
+    };
+
+    var q5_set2 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What did Sam sit next to while Mom read the story?</font>",
+        choices: [path+'A2_5A.png">', path+'A2_5B.png">', path+'A2_5C.png">', path+'A2_5D.png">']
+    };
+
+    var q6_set2 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>Why couldn't Sam play on the monkey bars outside?</font>",
+        choices:[path+'A2_6A.png">', path+'A2_6B.png">', path+'A2_6C.png">', path+'A2_6D.png">']
+    };
+
+    var q7_set2 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>Where did Sam put all of the toys when cleaning up?</font>",
+        choices: [path+'A2_7A.png">', path+'A2_7B.png">', path+'A2_7C.png">', path+'A2_7D.png">']
+    };
+
+    var q8_set2 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>Who did Sam want to see at school?</font>",
+        choices: [ path+'A2_8A.png">', path+'A2_8B.png">', path+'A2_8C.png">', path+'A2_8D.png">']
+    };
+    
+
+    var s1 = [q1_set2, q2_set2, q3_set2, q4_set2, q5_set2, q6_set2, q7_set2, q8_set2]
+    var set2_questions_randomized = jsPsych.randomization.shuffleNoRepeats(s1);
+   
+    var set2_node = {
+      timeline: set2_questions_randomized,
+      conditional_function: function(){
+          // get the data from the question set trial,
+          // and check which key was pressed
+          var data = jsPsych.data.get().first(4).last(1).values()[0]['response'];
+          if(data == 1 ){
+              return true;
+          } else {
+              return false;
+          }
+      }
+    }; timeline.push(set2_node);
+
+    // set 3 questions 
+
+    var q1_set3 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What color was the squirrel that Sam saw on the way to school?</font>",
+        choices: [path+'A3_1A.png">', path+'A3_1B.png">', path+'A3_1C.png">', path+'A3_1D.png">']
+    };
+
+    var q2_set3 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What puzzle did Sam put together?</font>",
+        choices: [path+'A3_2A.png">', path+'A3_2B.png">', path+'A3_2C.png">', path+'A3_2D.png">']
+    };
+
+    var q3_set3 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>Why couldn't Sam watch TV after dinner?</font>",
+        choices: [path+'A3_3A.png">', path+'A3_3B.png">', path+'A3_3C.png">', path+'A3_3D.png">'],
+    };
+
+    var q4_set3 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What did Sam drink with dinner?</font>",
+        choices: [ path+'A3_4A.png">', path+'A3_4B.png">', path+'A3_4C.png">', path+'A3_4D.png">'],
+    };
+
+    var q5_set3 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What did Sam want to sleep with?</font>",
+        choices: [path+'A3_5A.png">', path+'A3_5B.png">', path+'A3_5C.png">', path+'A3_5D.png">']
+    };
+
+    var q6_set3 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What did Sam do after changing into pajamas?</font>",
+        choices:[path+'A3_6A.png">', path+'A3_6B.png">', path+'A3_6C.png">', path+'A3_6D.png">']
+    };
+
+    var q7_set3 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>Why didn't Sam want Brussels sprouts for dinner?</font>",
+        choices: [path+'A3_7A.png">', path+'A3_7B.png">', path+'A3_7C.png">', path+'A3_7D.png">']
+    };
+
+    var q8_set3 = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'>What instrument did Sam play with?</font>",
+        choices: [ path+'A3_8A.png">', path+'A3_8B.png">', path+'A3_8C.png">', path+'A3_8D.png">']
+    };
+    
+    
+
+    var s1 = [q1_set3, q2_set3, q3_set3, q4_set3, q5_set3, q6_set3, q7_set3, q8_set3]
+    var set3_questions_randomized = jsPsych.randomization.shuffleNoRepeats(s1);
+   
+    var set3_node = {
+      timeline: set3_questions_randomized,
+      conditional_function: function(){
+          // get the data from the question set trial,
+          // and check which key was pressed
+          var data = jsPsych.data.get().first(4).last(1).values()[0]['response'];
+          if(data == 2 ){
+              return true;
+          } else {
+              return false;
+          }
+      }
+    }; timeline.push(set3_node);
+
+    var end_task = {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: "<font size = '+3'> <p>Thank you! You are all done. You can now close this screen </font><p>",
+        choices: ['Exit']
+    };
+    timeline.push(end_task)
+
+    var exit_fullscreen = {
+        type: jsPsychFullscreen,
+        fullscreen_mode: false,
+        delay_after: 0
+    };
+    timeline.push(exit_fullscreen);
+
+
+    /* start the experiment */
+    jsPsych.run(timeline);
+
+
+
+  </script>
+</html>
